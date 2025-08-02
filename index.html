@@ -9,8 +9,8 @@
       --bg-color: #fdfdfd;
       --text-color: #333;
       --nav-bg: #ffffff;
-      --accent-color: #007acc;
-      --button-hover: rgba(0, 122, 204, 0.1);
+      --accent-color: #1e90ff;
+      --button-hover: rgba(30, 144, 255, 0.1);
       --dropdown-bg: #ffffff;
     }
 
@@ -19,6 +19,7 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 40px auto;
@@ -31,8 +32,9 @@
     h1 {
       color: var(--accent-color);
       text-align: center;
-      margin-bottom: 40px;
+      margin: 40px 0 30px;
     }
+
     h2 {
       color: #444;
       margin-top: 30px;
@@ -53,67 +55,69 @@
       margin-bottom: 30px;
     }
 
+    /* === Navigation Bar === */
     nav {
       margin-bottom: 40px;
       background-color: var(--nav-bg);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
     }
 
     nav ul.navbar {
-      list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      padding: 0 20px;
-      background-color: var(--nav-bg);
+      gap: 40px;
+      padding: 10px 30px;
+      list-style: none;
+      align-items: center;
     }
 
     nav ul.navbar > li {
       position: relative;
-      margin-right: 30px;
-      font-weight: bold;
-      font-size: 18px;
     }
 
     nav ul.navbar > li > a {
-      display: block;
-      padding: 14px 10px;
       text-decoration: none;
       color: var(--text-color);
-      cursor: pointer;
-      transition: color 0.3s, background-color 0.3s;
+      font-weight: 600;
+      font-size: 17px;
+      padding: 10px 5px;
+      display: block;
+      transition: all 0.2s ease-in-out;
     }
 
     nav ul.navbar > li > a:hover {
-      background-color: var(--button-hover);
       color: var(--accent-color);
+      background-color: var(--button-hover);
       border-radius: 6px;
     }
 
+    /* Dropdown */
     .dropdown-menu {
       display: none;
       position: absolute;
-      background-color: var(--dropdown-bg);
       top: 100%;
       left: 0;
-      min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      z-index: 9999;
-      border-radius: 6px;
+      background-color: var(--dropdown-bg);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      min-width: 180px;
+      z-index: 999;
+      padding: 6px 0;
     }
 
     .dropdown-menu li {
       margin: 0;
-      padding: 0;
     }
 
     .dropdown-menu li a {
-      padding: 12px 16px;
       display: block;
+      padding: 10px 18px;
+      font-size: 15px;
       color: var(--text-color);
       text-decoration: none;
       font-weight: normal;
+      transition: all 0.2s ease;
     }
 
     .dropdown-menu li a:hover {
@@ -122,34 +126,35 @@
       border-radius: 6px;
     }
 
-    nav ul.navbar > li.dropdown:hover > .dropdown-menu {
+    nav ul.navbar > li.dropdown:hover .dropdown-menu {
       display: block;
     }
+
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav>
     <ul class="navbar">
-      <li><a href="https://sina-jafari.github.io/">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li class="dropdown">
         <a href="#">About</a>
         <ul class="dropdown-menu">
-          <li><a href="https://sina-jafari.github.io/bio">Biography</a></li>
-          <li><a href="https://sina-jafari.github.io/skills">Skills</a></li>
-          <li><a href="https://sina-jafari.github.io/cv">CV</a></li>
+          <li><a href="/bio">Biography</a></li>
+          <li><a href="/skills">Skills</a></li>
+          <li><a href="/cv">CV</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#">Projects</a>
         <ul class="dropdown-menu">
-          <li><a href="https://sina-jafari.github.io/photonics">Photonics</a></li>
-          <li><a href="https://sina-jafari.github.io/optics">Optics</a></li>
-          <li><a href="https://sina-jafari.github.io/coding">Coding</a></li>
+          <li><a href="#photonics">Photonics</a></li>
+          <li><a href="#optics">Optics</a></li>
+          <li><a href="#coding">Coding</a></li>
         </ul>
       </li>
-      <li><a href="https://sina-jafari.github.io/contact">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
